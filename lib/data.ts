@@ -3,6 +3,7 @@
 export interface PersonalInfo {
   name: string;
   role: string;
+  roleEn: string;
   university: string;
   location: string;
   semester: string;
@@ -19,11 +20,28 @@ export interface TestCase {
   detail: string;
 }
 
+export interface BeforeAfterItem {
+  label: string;
+  before: string;
+  after: string;
+}
+
+export interface HeroContent {
+  tagline: string;
+  statementPre: string;
+  statementMain: string;
+  statementAccent: string;
+  pitch: string;
+}
+
 export interface WhyMeCard {
   title: string;
   body: string;
   stat: string;
   statLabel: string;
+  requirement: string;
+  featured?: boolean;
+  beforeAfter?: BeforeAfterItem[];
 }
 
 export interface Credential {
@@ -68,6 +86,7 @@ export interface Project {
 export const personalInfo: PersonalInfo = {
   name: "Alejandro Alba Malagón",
   role: "Estudiante de Ingeniería de Sistemas & Desarrollador",
+  roleEn: "Systems Engineering Student & Developer",
   university: "Universidad Central",
   location: "Bogotá, Colombia",
   semester: "Octavo semestre",
@@ -77,6 +96,15 @@ export const personalInfo: PersonalInfo = {
   github: "https://github.com/Alejandro7337",
   english: "B2",
   availability: "40–50 %",
+};
+
+export const heroContent: HeroContent = {
+  tagline: "For progile · Front-End Developer",
+  statementPre: "Most developers apply.",
+  statementMain: "I built this with your stack",
+  statementAccent: "to show you.",
+  pitch:
+    "Building for a B2B testing-automation company requires precision and velocity. Both are measurable here.",
 };
 
 export const testCases: TestCase[] = [
@@ -104,32 +132,77 @@ export const testCases: TestCase[] = [
 
 export const whyMeCards: WhyMeCard[] = [
   {
-    title: "Contexto técnico más allá del frontend",
-    body: "La mayoría de candidatos frontend solo conocen el navegador. Yo vengo de arquitecturas multinube reales (GCP + Azure) con microservicios y automatización. Cuando un tech lead habla de infra, entiendo el contexto sin que lo expliquen.",
-    stat: "GCP + Azure",
-    statLabel: "en producción real",
+    featured: true,
+    requirement: "Tech stack & learning velocity",
+    title: "Learning velocity: proven, not claimed.",
+    body: "This page runs on Next.js 14 — the exact stack progile ships. I didn't know it four days ago. I know it now, and you're reading the proof. When progile needs someone to pick up a new tool fast, this already happened.",
+    stat: "4 days",
+    statLabel: "from zero to this production site",
+    beforeAfter: [
+      { label: "next.js", before: "unknown", after: "production ✓" },
+      { label: "react 18", before: "basic", after: "deployed ✓" },
+      { label: "typescript", before: "limited", after: "typed ✓" },
+      { label: "framer-motion", before: "0 exp", after: "live ✓" },
+    ],
   },
   {
-    title: "Velocidad de aprendizaje demostrable",
-    body: "Esta página está hecha con Next.js 14 y TypeScript, el stack exacto de progile. Lo aprendí para construirla. No es un claim — es la evidencia. Cuando progile necesite que aprenda algo nuevo, esto ya pasó antes.",
-    stat: "Next.js 14",
-    statLabel: "aprendido para esta postulación",
+    requirement: "Currently studying at a leading university in Colombia",
+    title: "Top performer at Universidad Central — twice over.",
+    body: "8th-semester Systems Engineering. Awarded two concurrent scholarships: one for top national ICFES scores, one for academic merit at the university. Not just meeting the requirement — meeting it with a proven performance record.",
+    stat: "2×",
+    statLabel: "simultaneous scholarships",
   },
   {
-    title: "Fit para el equipo",
-    body: "Universidad Central Bogotá es exactamente lo que progile busca. Inglés B2 para comunicarse con los founders daneses. Disponibilidad del 40–50 % que encaja con la carga de un estudiante activo en octavo semestre.",
+    requirement: "Strong eye for design",
+    title: "Evidence, not claims.",
+    body: "I designed this system from scratch — Blueprint Pass: custom color tokens, typographic hierarchy, motion choreography. No template used. The visual bar here is high. That's by design.",
+    stat: "0",
+    statLabel: "templates used",
+  },
+  {
+    requirement: "Works independently · solution-oriented",
+    title: "Real production responsibility — not tutorials.",
+    body: "Developer at PGD since April 2026: GCP + Azure microservice architectures in actual enterprise deployments. Architectural decision-making, not just implementation. When the tech lead is out, the work ships.",
+    stat: "GCP+Azure",
+    statLabel: "production since April 2026",
+  },
+  {
+    requirement: "Fluent in English",
+    title: "B2 certified — you've been reading the demo.",
+    body: "Certified English B2. This entire section is in English. Comfortable with async technical documentation, product discussions, and conversations with Danish founders.",
     stat: "B2",
-    statLabel: "Inglés · listo para Dinamarca",
+    statLabel: "certified English",
+  },
+  {
+    requirement: "40–50% part-time workload",
+    title: "The schedule was designed for exactly this.",
+    body: "8th-semester student on a part-time track. The 40–50% progile specifies isn't a constraint — it's the exact structure I'm already in. Zero scheduling friction on day one.",
+    stat: "40–50%",
+    statLabel: "available, starting now",
   },
 ];
 
 export const credentials: Credential[] = [
   {
+    type: "badge",
+    title: "Build a Data Mesh with Dataplex",
+    issuer: "Google Cloud Skills Boost",
+    description:
+      "Skill Badge for completing the data mesh implementation path with Dataplex on GCP.",
+  },
+  {
+    type: "badge",
+    title: "Build a Data Warehouse with BigQuery",
+    issuer: "Google Cloud Skills Boost",
+    description:
+      "Skill Badge for completing the enterprise data warehouse construction path with BigQuery.",
+  },
+  {
     type: "scholarship",
     title: "Media beca por mérito académico",
     issuer: "Universidad Central",
     description:
-      "Otorgada por rendimiento sobresaliente durante el programa de Ingeniería de Sistemas.",
+      "Top academic performance at Universidad Central — awarded a 50% scholarship based on merit, not financial need.",
     year: "2023",
   },
   {
@@ -137,22 +210,8 @@ export const credentials: Credential[] = [
     title: "Beca por resultados en ICFES",
     issuer: "Universidad Central",
     description:
-      "Reconocimiento por resultados destacados en el examen nacional de admisión universitaria colombiano.",
+      "Scored in the top percentile of Colombia's national university entrance exam (ICFES), earning a scholarship before even starting my degree.",
     year: "2023",
-  },
-  {
-    type: "badge",
-    title: "Build a Data Mesh with Dataplex",
-    issuer: "Google Cloud Skills Boost",
-    description:
-      "Skill Badge por completar el path de implementación de arquitecturas de datos con Dataplex en GCP.",
-  },
-  {
-    type: "badge",
-    title: "Build a Data Warehouse with BigQuery",
-    issuer: "Google Cloud Skills Boost",
-    description:
-      "Skill Badge por completar el path de construcción de data warehouses empresariales con BigQuery.",
   },
 ];
 

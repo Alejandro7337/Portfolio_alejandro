@@ -1,98 +1,143 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
-import { ArrowDown } from "lucide-react";
-import { GithubIcon } from "@/components/icons";
-import { personalInfo, testCases } from "@/lib/data";
+import { motion } from "framer-motion";
+import { Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/icons";
+import { personalInfo, testCases, heroContent } from "@/lib/data";
 
-const containerVariants: Variants = {
+const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const testContainerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.18, delayChildren: 0.5 },
+    transition: { staggerChildren: 0.15, delayChildren: 0.72 },
   },
 };
 
-const lineVariants: Variants = {
-  hidden: { opacity: 0, x: -10 },
+const testLineVariants = {
+  hidden: { opacity: 0, x: -8 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.3, ease: "easeOut" },
+    transition: { duration: 0.28, ease: "easeOut" as const },
   },
 };
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center pt-20">
+    <section className="min-h-screen flex items-center pt-16">
       <div className="max-w-6xl mx-auto px-6 w-full grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center py-20">
 
-        {/* Texto izquierdo */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <p className="text-brand-primary font-mono text-xs mb-5 tracking-widest uppercase">
-            Front-End Developer para progile
-          </p>
-          <h1 className="font-display text-5xl lg:text-[4.5rem] font-bold text-surface-text leading-[1.05] mb-6">
-            Alejandro<br />
-            Alba Malagón
-          </h1>
-          <p className="text-ink-500 text-lg leading-relaxed mb-8 max-w-lg">
-            Ingeniería de Sistemas ·{" "}
-            <span className="text-surface-text">{personalInfo.university}</span>,{" "}
-            {personalInfo.location} · {personalInfo.semester}.
-            Desarrollador con experiencia multinube real y el stack de progile en construcción activa.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#credentials"
-              className="bg-brand-primary text-ink-950 font-semibold px-6 py-3 rounded-lg hover:bg-brand-primary/90 transition-colors inline-flex items-center gap-2"
+        {/* Left: copy */}
+        <div className="flex flex-col gap-7">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease, delay: 0.05 }}
+            className="font-mono text-xs text-brand-primary tracking-widest uppercase"
+          >
+            {heroContent.tagline}
+          </motion.p>
+
+          <div className="space-y-1">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, ease, delay: 0.2 }}
+              className="text-ink-500 text-xl"
             >
-              Ver credenciales <ArrowDown size={16} />
+              {heroContent.statementPre}
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease, delay: 0.36 }}
+              className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight text-surface-text"
+            >
+              {heroContent.statementMain}{" "}
+              <span className="text-brand-accent">{heroContent.statementAccent}</span>
+            </motion.h1>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease, delay: 0.55 }}
+            className="space-y-1"
+          >
+            <p className="text-surface-text font-semibold text-lg leading-tight">
+              {personalInfo.name}
+            </p>
+            <p className="text-ink-500 text-sm">
+              {personalInfo.roleEn} ·{" "}
+              <span className="text-surface-text">{personalInfo.university}</span>
+            </p>
+            <p className="text-ink-500 text-sm pt-2 max-w-md leading-relaxed">
+              {heroContent.pitch}
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease, delay: 0.7 }}
+            className="flex flex-wrap gap-3"
+          >
+            <a
+              href="#contact"
+              className="bg-brand-primary text-ink-950 font-semibold px-6 py-2.5 rounded-lg hover:bg-brand-primary/90 transition-colors inline-flex items-center gap-2 text-sm"
+            >
+              Get in touch <Mail size={14} />
             </a>
             <a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-ink-500/60 text-surface-text px-6 py-3 rounded-lg hover:border-brand-primary hover:text-brand-primary transition-colors inline-flex items-center gap-2"
+              className="border border-ink-500/50 text-surface-text px-5 py-2.5 rounded-lg hover:border-brand-primary hover:text-brand-primary transition-colors inline-flex items-center gap-2 text-sm"
             >
-              <GithubIcon size={16} /> GitHub
+              <GithubIcon size={14} /> GitHub
             </a>
-          </div>
-        </motion.div>
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-ink-500/50 text-surface-text px-5 py-2.5 rounded-lg hover:border-brand-primary hover:text-brand-primary transition-colors inline-flex items-center gap-2 text-sm"
+            >
+              <LinkedinIcon size={14} /> LinkedIn
+            </a>
+          </motion.div>
+        </div>
 
-        {/* Test Suite Card */}
+        {/* Right: signature element — CANDIDATE_PROFILE.test.ts */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
-          className="w-full lg:w-[430px]"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease, delay: 0.3 }}
+          className="w-full lg:w-[420px]"
         >
           <div className="bg-ink-800 border border-brand-accent/25 rounded-xl overflow-hidden shadow-2xl">
-            {/* Barra de ventana */}
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-ink-500/25 bg-ink-950/60">
+            {/* macOS title bar */}
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-ink-500/20 bg-ink-950/60">
               <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
               <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
               <span className="w-3 h-3 rounded-full bg-[#28C840]" />
-              <span className="ml-3 font-mono text-xs text-ink-500 truncate">
+              <span className="ml-3 font-mono text-xs text-ink-500 select-none truncate">
                 CANDIDATE_PROFILE.test.ts
               </span>
             </div>
 
-            {/* Casos de test */}
-            <div className="p-6 font-mono text-sm">
+            {/* Test cases */}
+            <div className="p-5 font-mono text-sm">
               <motion.div
-                variants={containerVariants}
+                variants={testContainerVariants}
                 initial="hidden"
                 animate="visible"
                 className="space-y-4"
               >
                 {testCases.map((tc, i) => (
-                  <motion.div key={i} variants={lineVariants}>
+                  <motion.div key={i} variants={testLineVariants}>
                     <div className="flex items-start gap-3">
-                      <span className="text-brand-accent mt-0.5 select-none">✓</span>
+                      <span className="text-brand-accent select-none mt-0.5">✓</span>
                       <div>
                         <span className="text-surface-text">{tc.method}</span>
                         <p className="text-ink-500 text-xs mt-0.5 font-sans">{tc.detail}</p>
@@ -102,30 +147,36 @@ export default function Hero() {
                 ))}
               </motion.div>
 
-              {/* Resultado final */}
+              {/* Final result row */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.8, duration: 0.5 }}
-                className="mt-6 pt-4 border-t border-ink-500/25"
+                transition={{ delay: 1.85, duration: 0.4 }}
+                className="mt-5 pt-4 border-t border-ink-500/20"
               >
-                <div className="flex items-center justify-between">
-                  <span className="text-ink-500 text-xs">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-ink-500">
                     {testCases.length} passed · 0 failed · 142 ms
                   </span>
                   <motion.span
-                    initial={{ scale: 0.5, opacity: 0 }}
+                    initial={{ scale: 0.4, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 2.1, duration: 0.3, type: "spring" }}
-                    className="text-brand-accent font-bold text-base"
+                    transition={{
+                      delay: 2.1,
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 18,
+                    }}
+                    className="text-brand-accent font-bold tracking-wide"
                   >
-                    ✓
+                    PASS
                   </motion.span>
                 </div>
               </motion.div>
             </div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
