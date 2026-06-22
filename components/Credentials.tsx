@@ -127,10 +127,10 @@ export default function Credentials() {
           className="mb-12"
         >
           <p className="font-mono text-xs text-brand-primary tracking-widest uppercase mb-2">
-            Credenciales
+            Credentials
           </p>
           <h2 className="font-display text-4xl font-bold text-surface-text">
-            Logros verificables.
+            Verifiable achievements.
           </h2>
           <p className="text-ink-500 mt-2 text-sm">
             Not claimed on a CV. Earned, certified, and linked.

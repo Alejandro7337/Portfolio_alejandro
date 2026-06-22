@@ -11,6 +11,7 @@ export interface PersonalInfo {
   email: string;
   linkedin: string;
   github: string;
+  portfolioGithub: string;
   english: string;
   availability: string;
 }
@@ -83,21 +84,22 @@ export interface Project {
   statusNote?: string;
 }
 
-// ─── Datos ────────────────────────────────────────────────────────────────────
+// ─── Data ─────────────────────────────────────────────────────────────────────
 
 export const personalInfo: PersonalInfo = {
   name: "Alejandro Alba Malagón",
-  role: "Estudiante de Ingeniería de Sistemas & Desarrollador",
+  role: "Systems Engineering Student & Developer",
   roleEn: "Systems Engineering Student & Developer",
   university: "Universidad Central",
   location: "Bogotá, Colombia",
-  semester: "Octavo semestre",
+  semester: "8th Semester",
   years: "2023–2027",
   email: "alejandroalba2605@gmail.com",
-  linkedin: "https://www.linkedin.com/in/alejandroalba-3ba12a314",
+  linkedin: "https://www.linkedin.com/in/alejandro-alba-3ba12a314",
   github: "https://github.com/Alejandro7337",
+  portfolioGithub: "https://github.com/Alejandro7337/Portfolio_alejandro",
   english: "B2",
-  availability: "40–50 %",
+  availability: "40–50%",
 };
 
 export const heroContent: HeroContent = {
@@ -112,15 +114,15 @@ export const heroContent: HeroContent = {
 export const testCases: TestCase[] = [
   {
     method: "academicExcellence()",
-    detail: "becas: ICFES + Universidad Central",
+    detail: "scholarships: ICFES + Universidad Central",
   },
   {
     method: "cloudExperience()",
-    detail: "GCP + Azure · arquitectura real",
+    detail: "GCP + Azure · real architecture",
   },
   {
     method: "learningVelocity()",
-    detail: "aprendiendo Next.js mientras aplica",
+    detail: "learning Next.js while applying",
   },
   {
     method: "communication()",
@@ -128,7 +130,7 @@ export const testCases: TestCase[] = [
   },
   {
     method: "availability()",
-    detail: "40–50 % del tiempo · semestral",
+    detail: "40–50% workload · semester-based",
   },
 ];
 
@@ -164,9 +166,9 @@ export const whyMeCards: WhyMeCard[] = [
   {
     requirement: "Works independently · solution-oriented",
     title: "Real production responsibility — not tutorials.",
-    body: "Developer at PGD since April 2026: GCP + Azure microservice architectures in actual enterprise deployments. Architectural decision-making, not just implementation. When the tech lead is out, the work ships.",
+    body: "Developer at PGD: GCP + Azure microservice architectures in actual enterprise deployments. Architectural decision-making, not just implementation. When the tech lead is out, the work ships.",
     stat: "GCP+Azure",
-    statLabel: "production since April 2026",
+    statLabel: "in production",
   },
   {
     requirement: "Fluent in English",
@@ -201,7 +203,7 @@ export const credentials: Credential[] = [
   },
   {
     type: "scholarship",
-    title: "Media beca por mérito académico",
+    title: "50% Merit Scholarship",
     issuer: "Universidad Central",
     description:
       "Top academic performance at Universidad Central — awarded a 50% scholarship based on merit, not financial need.",
@@ -209,7 +211,7 @@ export const credentials: Credential[] = [
   },
   {
     type: "scholarship",
-    title: "Beca por resultados en ICFES",
+    title: "ICFES National Exam Scholarship",
     issuer: "Universidad Central",
     description:
       "Scored in the top percentile of Colombia's national university entrance exam (ICFES), earning a scholarship before even starting my degree.",
@@ -264,23 +266,23 @@ export const experience: WorkExperience[] = [
   {
     company: "PGD",
     companyFull: "PGD Procesos de Gestión Documental SAS",
-    role: "Desarrollador Junior",
-    period: "Abril 2026 — presente",
+    role: "Junior Developer",
+    period: "April 2026 — May 2026",
     location: "Bogotá, Colombia",
-    current: true,
+    current: false,
     bullets: [
-      "Diseño e implementación de soluciones de automatización documental.",
-      "Arquitecturas en Google Cloud Platform como nube base del sistema.",
-      "Integración en entornos multinube con Microsoft Azure.",
-      "Ciclo completo de desarrollo: código limpio, microservicios, despliegue, escalabilidad y seguridad corporativa.",
+      "Designed and implemented document automation solutions.",
+      "Google Cloud Platform architectures as the system's base infrastructure.",
+      "Multi-cloud integration with Microsoft Azure.",
+      "Full development cycle: clean code, microservices, deployment, scalability, and corporate data security.",
     ],
     tech: ["GCP", "Azure", "Microservices", "Cloud Architecture"],
   },
   {
     company: "Papa John's",
     companyFull: "Papa John's Pizza",
-    role: "Auxiliar de cocina y atención al cliente",
-    period: "Dic 2024 — Feb 2025",
+    role: "Kitchen Assistant & Customer Service",
+    period: "Dec 2024 — Feb 2025",
     location: "Bogotá, Colombia",
     current: false,
     note: "Worked in a fast-paced environment. Learned what 'uptime' really means.",
@@ -292,12 +294,12 @@ export const experience: WorkExperience[] = [
 export const projects: Project[] = [
   {
     name: "Banco Ágil Col",
-    description: "Plataforma digital de créditos para PYMEs",
+    description: "Digital credit platform for SMEs in Colombia",
     longDescription:
-      "Sistema de solicitud y gestión de créditos PYMES con frontend web, backend en Java Spring Boot y despliegue en Google Cloud. Proyecto académico que integra arquitectura real de producción con tecnologías empresariales.",
+      "Credit request and management system for SMEs with a web frontend, Java Spring Boot backend, and Google Cloud deployment. Academic project integrating real production architecture with enterprise technologies.",
     tech: ["HTML5", "CSS3", "JavaScript", "Java · Spring Boot", "Google Cloud"],
-    github: "https://github.com/Alejandro7337",
-    highlight: "Arquitectura de producción real en GCP",
+    github: "https://github.com/jnocuac-byte/banco-agil-col-gcp",
+    highlight: "Real production architecture on GCP",
     status: "Code on GitHub",
     statusNote: "Cloud deployment decommissioned · code on GitHub",
   },

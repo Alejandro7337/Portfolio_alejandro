@@ -8,7 +8,10 @@ export default function Footer() {
     <footer className="border-t border-ink-500/20 py-8">
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-5">
         {/* Logo mark */}
-        <a href="#" className="font-display font-bold text-surface-text select-none shrink-0">
+        <a
+          href="#"
+          className="font-display font-bold text-surface-text select-none shrink-0 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
+        >
           AA<span className="text-brand-accent">·</span>
         </a>
 
@@ -23,14 +26,23 @@ export default function Footer() {
           {" · "}{year}
         </p>
 
-        {/* Social links */}
+        {/* Social + source links */}
         <div className="flex items-center gap-4 shrink-0">
+          <a
+            href={personalInfo.portfolioGithub}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs text-ink-500/50 hover:text-brand-primary transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
+            aria-label="View portfolio source code on GitHub"
+          >
+            source
+          </a>
           <a
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-ink-500/50 hover:text-surface-text transition-colors"
-            aria-label="GitHub"
+            className="text-ink-500/50 hover:text-surface-text transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
+            aria-label="GitHub profile"
           >
             <GithubIcon size={16} />
           </a>
@@ -38,8 +50,8 @@ export default function Footer() {
             href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-ink-500/50 hover:text-surface-text transition-colors"
-            aria-label="LinkedIn"
+            className="text-ink-500/50 hover:text-surface-text transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
+            aria-label="LinkedIn profile"
           >
             <LinkedinIcon size={16} />
           </a>

@@ -115,10 +115,10 @@ export default function Experience() {
           className="mb-12"
         >
           <p className="font-mono text-xs text-brand-primary tracking-widest uppercase mb-2">
-            Experiencia
+            Experience
           </p>
           <h2 className="font-display text-4xl font-bold text-surface-text">
-            Trabajo real en entornos reales.
+            Real work in real environments.
           </h2>
         </motion.div>
 

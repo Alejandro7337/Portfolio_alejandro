@@ -16,10 +16,10 @@ export default function Projects() {
           className="mb-10"
         >
           <p className="font-mono text-xs text-brand-primary tracking-widest uppercase mb-2">
-            Proyectos
+            Projects
           </p>
           <h2 className="font-display text-4xl font-bold text-surface-text">
-            Lo que he construido.
+            What I&apos;ve built.
           </h2>
         </motion.div>
 

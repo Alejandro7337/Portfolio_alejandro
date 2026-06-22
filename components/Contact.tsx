@@ -17,7 +17,7 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <p className="font-mono text-xs text-brand-primary tracking-widest uppercase mb-4">
-              Contacto
+              Contact
             </p>
             <h2 className="font-display text-5xl sm:text-6xl font-bold text-surface-text leading-tight mb-4">
               Ready to ship.

@@ -117,10 +117,10 @@ export default function Skills() {
           className="mb-10"
         >
           <p className="font-mono text-xs text-brand-primary tracking-widest uppercase mb-2">
-            Stack técnico
+            Tech stack
           </p>
           <h2 className="font-display text-4xl font-bold text-surface-text">
-            Lo que traigo y lo que construyo.
+            What I bring. What I&apos;m building.
           </h2>
         </motion.div>
 

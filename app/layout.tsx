@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import MotionProvider from "@/components/MotionProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,14 +16,15 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Alejandro Alba — Front-End Developer para progile",
+  title: "Alejandro Alba — Front-End Developer | progile",
   description:
-    "Estudiante de Ingeniería de Sistemas en Universidad Central Bogotá con experiencia real en GCP + Azure, dos becas académicas y el stack de Next.js 14 + TypeScript que progile necesita.",
+    "Systems Engineering student at Universidad Central, Bogotá. Scholarship recipient, Google Cloud certified, currently building with Next.js 14.2 + TinaCMS. Applying for the Front-End Developer role at progile / TestResults.",
   openGraph: {
-    title: "Alejandro Alba — Front-End Developer para progile",
+    title: "Alejandro Alba — Front-End Developer | progile",
     description:
-      "Arquitectura multinube real, beca por mérito académico, inglés B2 y el stack exacto de progile. Disponibilidad 40–50 %.",
+      "Real cloud architecture experience, two academic scholarships, B2 English, and the exact stack progile ships. Available 40–50%.",
     type: "website",
+    locale: "en_US",
   },
 };
 
@@ -33,11 +35,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="es"
+      lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable}`}
     >
-      <body className="font-body bg-ink-950 text-surface-text antialiased">
-        {children}
+      <body className="font-body bg-ink-950 text-surface-text antialiased overflow-x-hidden">
+        <MotionProvider>
+          {children}
+        </MotionProvider>
       </body>
     </html>
   );
