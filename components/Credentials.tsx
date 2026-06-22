@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Award, CheckCircle2 } from "lucide-react";
-import { credentials } from "@/lib/data";
 import type { Credential } from "@/lib/data";
+
+interface CredentialsProps {
+  credentials: Credential[];
+}
 
 interface BadgeCardProps {
   badge: Credential;
@@ -112,7 +115,7 @@ function ScholarshipCard({ credential, index }: ScholarshipCardProps) {
   );
 }
 
-export default function Credentials() {
+export default function Credentials({ credentials }: CredentialsProps) {
   const badges = credentials.filter((c) => c.type === "badge");
   const scholarships = credentials.filter((c) => c.type === "scholarship");
 

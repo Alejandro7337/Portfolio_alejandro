@@ -1,7 +1,11 @@
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
-import { personalInfo } from "@/lib/data";
+import type { PersonalInfo } from "@/lib/data";
 
-export default function Footer() {
+interface FooterProps {
+  personalInfo: PersonalInfo;
+}
+
+export default function Footer({ personalInfo }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (

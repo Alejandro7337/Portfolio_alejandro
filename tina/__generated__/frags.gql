@@ -1,0 +1,86 @@
+fragment HomepageParts on Homepage {
+  __typename
+  personalInfo {
+    __typename
+    name
+    role
+    roleEn
+    university
+    location
+    semester
+    years
+    email
+    linkedin
+    github
+    portfolioGithub
+    english
+    availability
+  }
+  heroContent {
+    __typename
+    tagline
+    statementPre
+    statementMain
+    statementAccent
+    pitch
+  }
+  testCases {
+    __typename
+    method
+    detail
+  }
+  whyMeCards {
+    __typename
+    featured
+    requirement
+    title
+    body
+    stat
+    statLabel
+    beforeAfter {
+      __typename
+      label
+      before
+      after
+    }
+  }
+  credentials {
+    __typename
+    type
+    title
+    issuer
+    description
+    year
+  }
+  skillGroups {
+    __typename
+    id
+    label
+    sublabel
+    skills
+    priority
+  }
+  experience {
+    __typename
+    company
+    companyFull
+    role
+    period
+    location
+    current
+    note
+    bullets
+    tech
+  }
+  projects {
+    __typename
+    name
+    description
+    longDescription
+    tech
+    github
+    highlight
+    status
+    statusNote
+  }
+}

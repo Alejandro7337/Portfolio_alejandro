@@ -2,9 +2,14 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, GitBranch, AlertCircle } from "lucide-react";
-import { projects, personalInfo } from "@/lib/data";
+import type { Project, PersonalInfo } from "@/lib/data";
 
-export default function Projects() {
+interface ProjectsProps {
+  projects: Project[];
+  personalInfo: PersonalInfo;
+}
+
+export default function Projects({ projects, personalInfo }: ProjectsProps) {
   return (
     <section id="projects" className="py-24">
       <div className="max-w-6xl mx-auto px-6">

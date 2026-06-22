@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skillGroups } from "@/lib/data";
 import type { SkillGroupItem } from "@/lib/data";
+
+interface SkillsProps {
+  skillGroups: SkillGroupItem[];
+}
 
 interface GroupProps {
   group: SkillGroupItem;
@@ -101,7 +104,7 @@ function LowPriorityGroup({ group }: GroupProps) {
   );
 }
 
-export default function Skills() {
+export default function Skills({ skillGroups }: SkillsProps) {
   const high = skillGroups.find((g) => g.priority === "high");
   const medium = skillGroups.find((g) => g.priority === "medium");
   const low = skillGroups.find((g) => g.priority === "low");

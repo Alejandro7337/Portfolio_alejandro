@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# tinacms — generated admin panel (regenerado en cada build)
+/public/admin

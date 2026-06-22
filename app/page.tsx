@@ -1,27 +1,15 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import WhyMe from "@/components/WhyMe";
-import Credentials from "@/components/Credentials";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import homeData from "@/content/home.json";
+import { HomeClient } from "@/components/HomeClient";
+import type { HomepageQuery } from "@/tina/__generated__/types";
 
-export default function Home() {
+export default function Page() {
+  const data = { homepage: homeData } as unknown as HomepageQuery;
+
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <WhyMe />
-        <Credentials />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <HomeClient
+      data={data}
+      variables={{ relativePath: "home.json" }}
+      query=""
+    />
   );
 }

@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { MapPin, Calendar } from "lucide-react";
-import { experience } from "@/lib/data";
 import type { WorkExperience } from "@/lib/data";
+
+interface ExperienceProps {
+  experience: WorkExperience[];
+}
 
 interface TimelineItemProps {
   exp: WorkExperience;
@@ -103,7 +106,7 @@ function TimelineItem({ exp, index, isLast }: TimelineItemProps) {
   );
 }
 
-export default function Experience() {
+export default function Experience({ experience }: ExperienceProps) {
   return (
     <section id="experience" className="py-24 bg-ink-800/30">
       <div className="max-w-6xl mx-auto px-6">

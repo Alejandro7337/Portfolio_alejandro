@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { whyMeCards } from "@/lib/data";
 import type { WhyMeCard } from "@/lib/data";
+
+interface WhyMeProps {
+  whyMeCards: WhyMeCard[];
+}
 
 interface FeaturedCardProps {
   card: WhyMeCard;
@@ -37,7 +40,7 @@ function FeaturedCard({ card }: FeaturedCardProps) {
       </div>
 
       {/* Before / After visual */}
-      {card.beforeAfter && (
+      {card.beforeAfter && card.beforeAfter.length > 0 && (
         <div className="grid sm:grid-cols-[1fr_auto_1fr] gap-4 items-center mb-6">
           <div className="bg-ink-950/70 rounded-lg p-4 font-mono text-xs space-y-2">
             <p className="text-ink-500 mb-2.5">// 4 days ago</p>
@@ -108,7 +111,7 @@ function RegularCard({ card, index }: RegularCardProps) {
   );
 }
 
-export default function WhyMe() {
+export default function WhyMe({ whyMeCards }: WhyMeProps) {
   const featured = whyMeCards.find((c) => c.featured);
   const rest = whyMeCards.filter((c) => !c.featured);
 

@@ -3,7 +3,13 @@
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
-import { personalInfo, testCases, heroContent } from "@/lib/data";
+import type { PersonalInfo, TestCase, HeroContent } from "@/lib/data";
+
+interface HeroProps {
+  personalInfo: PersonalInfo;
+  testCases: TestCase[];
+  heroContent: HeroContent;
+}
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -23,7 +29,7 @@ const testLineVariants = {
   },
 };
 
-export default function Hero() {
+export default function Hero({ personalInfo, testCases, heroContent }: HeroProps) {
   return (
     <section id="about" className="min-h-screen flex items-center pt-16">
       <div className="max-w-6xl mx-auto px-6 w-full grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center py-20">

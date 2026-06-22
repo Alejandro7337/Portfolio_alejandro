@@ -3,9 +3,14 @@
 import { motion } from "framer-motion";
 import { Mail, ArrowUpRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
-import { personalInfo, testCases } from "@/lib/data";
+import type { PersonalInfo, TestCase } from "@/lib/data";
 
-export default function Contact() {
+interface ContactProps {
+  personalInfo: PersonalInfo;
+  testCases: TestCase[];
+}
+
+export default function Contact({ personalInfo, testCases }: ContactProps) {
   return (
     <section id="contact" className="py-24 bg-ink-800/30">
       <div className="max-w-6xl mx-auto px-6">
