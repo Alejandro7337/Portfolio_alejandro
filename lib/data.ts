@@ -52,14 +52,12 @@ export interface Credential {
   year?: string;
 }
 
-export interface Skill {
-  name: string;
-  category?: string;
-}
-
-export interface SkillGroup {
-  mastered: Skill[];
-  learning: Skill[];
+export interface SkillGroupItem {
+  id: string;
+  label: string;
+  sublabel: string;
+  skills: string[];
+  priority: "high" | "medium" | "low";
 }
 
 export interface WorkExperience {
@@ -70,6 +68,8 @@ export interface WorkExperience {
   location: string;
   bullets: string[];
   tech: string[];
+  current?: boolean;
+  note?: string;
 }
 
 export interface Project {
@@ -79,6 +79,8 @@ export interface Project {
   tech: string[];
   github: string;
   highlight: string;
+  status: string;
+  statusNote?: string;
 }
 
 // ─── Datos ────────────────────────────────────────────────────────────────────
@@ -215,44 +217,75 @@ export const credentials: Credential[] = [
   },
 ];
 
-export const skills: SkillGroup = {
-  mastered: [
-    { name: "Python", category: "language" },
-    { name: "Java", category: "language" },
-    { name: "SQL", category: "language" },
-    { name: "HTML5 / CSS3", category: "web" },
-    { name: "JavaScript", category: "web" },
-    { name: "Google Cloud Platform", category: "cloud" },
-    { name: "Microsoft Azure", category: "cloud" },
-    { name: "BigQuery", category: "data" },
-    { name: "Dataflow", category: "data" },
-    { name: "Dataplex", category: "data" },
-    { name: "Git", category: "tool" },
-    { name: "Jupyter Notebooks", category: "tool" },
-    { name: "Metodologías ágiles", category: "practice" },
-  ],
-  learning: [
-    { name: "Next.js 14", category: "web" },
-    { name: "React 18", category: "web" },
-    { name: "TypeScript", category: "language" },
-    { name: "TinaCMS", category: "cms" },
-    { name: "Framer Motion", category: "web" },
-  ],
-};
+export const skillGroups: SkillGroupItem[] = [
+  {
+    id: "for-role",
+    label: "What I'm learning for this role",
+    sublabel: "Built this page to demonstrate it — live proof",
+    skills: ["Next.js 14.2", "React 18", "TypeScript", "TinaCMS", "Vercel", "Tailwind CSS"],
+    priority: "high",
+  },
+  {
+    id: "at-work",
+    label: "Current stack at work",
+    sublabel: "In production at PGD since April 2026",
+    skills: [
+      "Google Cloud Platform",
+      "BigQuery",
+      "Dataflow",
+      "Dataplex",
+      "Compute Engine",
+      "Microsoft Azure",
+      "Microservices",
+      "Git",
+    ],
+    priority: "medium",
+  },
+  {
+    id: "foundations",
+    label: "Foundations",
+    sublabel: "Where technical depth comes from",
+    skills: [
+      "Python",
+      "Java · Spring Boot",
+      "SQL",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "REST APIs",
+      "Jupyter Notebooks",
+      "Agile",
+    ],
+    priority: "low",
+  },
+];
 
 export const experience: WorkExperience[] = [
   {
     company: "PGD",
     companyFull: "PGD Procesos de Gestión Documental SAS",
     role: "Desarrollador Junior",
-    period: "Abril 2026 — Mayo 2026",
-    location: "Colombia",
+    period: "Abril 2026 — presente",
+    location: "Bogotá, Colombia",
+    current: true,
     bullets: [
-      "Implementación de arquitecturas en Google Cloud Platform y Microsoft Azure.",
-      "Desarrollo y despliegue de microservicios en entornos empresariales.",
-      "Automatización de procesos de gestión documental.",
+      "Diseño e implementación de soluciones de automatización documental.",
+      "Arquitecturas en Google Cloud Platform como nube base del sistema.",
+      "Integración en entornos multinube con Microsoft Azure.",
+      "Ciclo completo de desarrollo: código limpio, microservicios, despliegue, escalabilidad y seguridad corporativa.",
     ],
-    tech: ["GCP", "Azure", "Microservicios"],
+    tech: ["GCP", "Azure", "Microservices", "Cloud Architecture"],
+  },
+  {
+    company: "Papa John's",
+    companyFull: "Papa John's Pizza",
+    role: "Auxiliar de cocina y atención al cliente",
+    period: "Dic 2024 — Feb 2025",
+    location: "Bogotá, Colombia",
+    current: false,
+    note: "Worked in a fast-paced environment. Learned what 'uptime' really means.",
+    bullets: [],
+    tech: [],
   },
 ];
 
@@ -262,8 +295,10 @@ export const projects: Project[] = [
     description: "Plataforma digital de créditos para PYMEs",
     longDescription:
       "Sistema de solicitud y gestión de créditos PYMES con frontend web, backend en Java Spring Boot y despliegue en Google Cloud. Proyecto académico que integra arquitectura real de producción con tecnologías empresariales.",
-    tech: ["HTML / CSS / JavaScript", "Java Spring Boot", "Google Cloud"],
+    tech: ["HTML5", "CSS3", "JavaScript", "Java · Spring Boot", "Google Cloud"],
     github: "https://github.com/Alejandro7337",
     highlight: "Arquitectura de producción real en GCP",
+    status: "Code on GitHub",
+    statusNote: "Cloud deployment decommissioned · code on GitHub",
   },
 ];

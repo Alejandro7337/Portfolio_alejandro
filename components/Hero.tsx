@@ -25,7 +25,7 @@ const testLineVariants = {
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center pt-16">
+    <section id="about" className="min-h-screen flex items-center pt-16">
       <div className="max-w-6xl mx-auto px-6 w-full grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center py-20">
 
         {/* Left: copy */}
