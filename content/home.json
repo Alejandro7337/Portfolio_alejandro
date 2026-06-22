@@ -22,11 +22,26 @@
     "pitch": "Building for a B2B testing-automation company requires precision and velocity. Both are measurable here."
   },
   "testCases": [
-    { "method": "academicExcellence()", "detail": "scholarships: ICFES + Universidad Central" },
-    { "method": "cloudExperience()", "detail": "GCP + Azure · real architecture" },
-    { "method": "learningVelocity()", "detail": "learning Next.js while applying" },
-    { "method": "communication()", "detail": "English B2 · Danish-ready" },
-    { "method": "availability()", "detail": "40–50% workload · semester-based" }
+    {
+      "method": "academicExcellence()",
+      "detail": "scholarships: ICFES + Universidad Central"
+    },
+    {
+      "method": "cloudExperience()",
+      "detail": "GCP + Azure · real architecture"
+    },
+    {
+      "method": "learningVelocity()",
+      "detail": "learning Next.js while applying"
+    },
+    {
+      "method": "communication()",
+      "detail": "English B2 · Danish-ready"
+    },
+    {
+      "method": "availability()",
+      "detail": "40–50% workload · semester-based"
+    }
   ],
   "whyMeCards": [
     {
@@ -34,13 +49,29 @@
       "requirement": "Tech stack & learning velocity",
       "title": "Learning velocity: proven, not claimed.",
       "body": "This page runs on Next.js 14 — the exact stack progile ships. I didn't know it four days ago. I know it now, and you're reading the proof. When progile needs someone to pick up a new tool fast, this already happened.",
-      "stat": "4 days",
+      "stat": "4 hours",
       "statLabel": "from zero to this production site",
       "beforeAfter": [
-        { "label": "next.js", "before": "unknown", "after": "production ✓" },
-        { "label": "react 18", "before": "basic", "after": "deployed ✓" },
-        { "label": "typescript", "before": "limited", "after": "typed ✓" },
-        { "label": "framer-motion", "before": "0 exp", "after": "live ✓" }
+        {
+          "label": "next.js",
+          "before": "unknown",
+          "after": "production ✓"
+        },
+        {
+          "label": "react 18",
+          "before": "basic",
+          "after": "deployed ✓"
+        },
+        {
+          "label": "typescript",
+          "before": "limited",
+          "after": "typed ✓"
+        },
+        {
+          "label": "framer-motion",
+          "before": "0 exp",
+          "after": "live ✓"
+        }
       ]
     },
     {
@@ -109,7 +140,7 @@
       "title": "50% Merit Scholarship",
       "issuer": "Universidad Central",
       "description": "Top academic performance at Universidad Central — awarded a 50% scholarship based on merit, not financial need.",
-      "year": "2023"
+      "year": "2025-2"
     },
     {
       "type": "scholarship",
@@ -124,7 +155,14 @@
       "id": "for-role",
       "label": "What I'm learning for this role",
       "sublabel": "Built this page to demonstrate it — live proof",
-      "skills": ["Next.js 14.2", "React 18", "TypeScript", "TinaCMS", "Vercel", "Tailwind CSS"],
+      "skills": [
+        "Next.js 14.2",
+        "React 18",
+        "TypeScript",
+        "TinaCMS",
+        "Vercel",
+        "Tailwind CSS"
+      ],
       "priority": "high"
     },
     {
@@ -176,7 +214,12 @@
         "Multi-cloud integration with Microsoft Azure.",
         "Full development cycle: clean code, microservices, deployment, scalability, and corporate data security."
       ],
-      "tech": ["GCP", "Azure", "Microservices", "Cloud Architecture"]
+      "tech": [
+        "GCP",
+        "Azure",
+        "Microservices",
+        "Cloud Architecture"
+      ]
     },
     {
       "company": "Papa John's",
@@ -195,7 +238,13 @@
       "name": "Banco Ágil Col",
       "description": "Digital credit platform for SMEs in Colombia",
       "longDescription": "Credit request and management system for SMEs with a web frontend, Java Spring Boot backend, and Google Cloud deployment. Academic project integrating real production architecture with enterprise technologies.",
-      "tech": ["HTML5", "CSS3", "JavaScript", "Java · Spring Boot", "Google Cloud"],
+      "tech": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Java · Spring Boot",
+        "Google Cloud"
+      ],
       "github": "https://github.com/jnocuac-byte/banco-agil-col-gcp",
       "highlight": "Real production architecture on GCP",
       "status": "Code on GitHub",
